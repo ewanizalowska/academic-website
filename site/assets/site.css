@@ -4,9 +4,9 @@
   --ink: #1d1d1f;
   --muted: #65656a;
   --faint: #d9d7d2;
-  --accent: #8b1e3f;
-  --accent-soft: #f5edf0;
-  --max: 760px;
+  --accent: #b60000;
+  --accent-soft: #E56399;
+  --max: 960px;
   --measure: 680px;
   --gutter: clamp(28px, 10vw, 180px);
   color-scheme: light;
@@ -49,7 +49,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 body {
@@ -69,7 +69,7 @@ a {
 }
 
 a:hover {
-  color: #5f142b;
+  color: var(--accent-soft);
 }
 
 a:focus-visible,
@@ -100,13 +100,14 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  font-size: 1.08rem;
+  font-size: 1rem;
 }
 
 .brand {
   color: var(--ink);
   font-weight: 650;
   text-decoration: none;
+  font-size: 1rem;
 }
 
 .nav-links {
@@ -117,13 +118,13 @@ img {
 }
 
 .nav-links a {
-  color: var(--muted);
+  color: var(--ink);
   text-decoration: none;
 }
 
 .nav-links a[aria-current="page"],
 .nav-links a:hover {
-  color: var(--ink);
+  color: var(--accent);
 }
 
 .page {
@@ -201,9 +202,24 @@ li + li {
 
 .home-hero {
   display: grid;
-  grid-template-columns: minmax(180px, 220px) minmax(0, 1fr);
-  gap: 34px;
+  grid-template-columns: minmax(180px, 260px) minmax(0, 1fr);
+  gap: 60px;
   align-items: stretch;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;       /* Centers vertically */
+  justify-content: center;   /* Centers horizontally if needed */
+  height: 500px;             /* Example explicit container height */
+  width: 100%;
+}
+
+.hero-img {
+  width: auto;               /* Fills the container's width */
+  height: 75%;               
+  object-fit: cover;         /* Crops the image slightly to prevent overflow */
+  object-position: center;   /* Ensures the cropped image stays centered */
 }
 
 .portrait-frame {
